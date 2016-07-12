@@ -1,4 +1,4 @@
-package br.produban.controllers;
+package br.produban.application.controller;
 
 import java.util.List;
 
@@ -13,9 +13,10 @@ import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
-import br.produban.models.CepRule;
-import br.produban.models.CepRuleItem;
-import br.produban.services.CepRuleService;
+import br.produban.application.controller.CepRuleController;
+import br.produban.application.service.CepRuleService;
+import br.produban.domain.rule.CepRule;
+import br.produban.domain.rule.CepRuleItem;
 import io.github.benas.jpopulator.api.Populator;
 import io.github.benas.jpopulator.impl.PopulatorBuilder;
 

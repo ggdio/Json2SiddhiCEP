@@ -1,4 +1,4 @@
-package br.produban.controllers;
+package br.produban.application.controller;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.produban.models.CepRule;
-import br.produban.services.CepRuleService;
+import br.produban.application.service.CepRuleService;
+import br.produban.domain.rule.CepRule;
 
 /**
  * Created by bera on 30/06/16.

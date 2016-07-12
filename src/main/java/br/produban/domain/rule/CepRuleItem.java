@@ -1,4 +1,4 @@
-package br.produban.models;
+package br.produban.domain.rule;
 
 import java.util.List;
 

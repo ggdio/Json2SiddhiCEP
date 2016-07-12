@@ -1,4 +1,4 @@
-package br.produban.services;
+package br.produban.application.service;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -8,12 +8,12 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.produban.enumerations.Condition;
-import br.produban.enumerations.FieldType;
-import br.produban.enumerations.ItemType;
-import br.produban.models.CepRule;
-import br.produban.models.CepRuleItem;
-import br.produban.repositories.CepRuleMongoRepository;
+import br.produban.domain.query.FieldType;
+import br.produban.domain.query.ItemType;
+import br.produban.domain.query.Operator;
+import br.produban.domain.rule.CepRule;
+import br.produban.domain.rule.CepRuleItem;
+import br.produban.infrastructure.repository.CepRuleMongoRepository;
 
 @Service
 public class CepRuleService {
@@ -59,7 +59,7 @@ public class CepRuleService {
 			condition.setFieldType(FieldType.STRING.external);
 		}
 		if (StringUtils.isEmpty(condition.getCondition())) {
-			condition.setCondition(Condition.AND.external);
+			condition.setCondition(Operator.AND.external);
 		}
 	}
 

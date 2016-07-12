@@ -1,4 +1,4 @@
-package br.produban.enumerations;
+package br.produban.domain.query;
 
 import org.apache.commons.lang3.StringUtils;
 

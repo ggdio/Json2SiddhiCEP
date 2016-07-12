@@ -1,4 +1,4 @@
-package br.produban.services;
+package br.produban.application.service;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,7 +17,8 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import br.produban.models.CepRule;
+import br.produban.application.service.SiddhiService;
+import br.produban.domain.rule.CepRule;
 
 public class SiddhiServiceTest {
 

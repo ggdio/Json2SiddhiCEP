@@ -1,4 +1,4 @@
-package br.produban.services;
+package br.produban.application.service;
 
 import java.util.Calendar;
 
@@ -15,8 +15,10 @@ import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 import org.mockito.stubbing.Answer;
 
-import br.produban.models.CepRule;
-import br.produban.repositories.CepRuleMongoRepository;
+import br.produban.application.service.CepRuleService;
+import br.produban.application.service.SiddhiService;
+import br.produban.domain.rule.CepRule;
+import br.produban.infrastructure.repository.CepRuleMongoRepository;
 import io.github.benas.jpopulator.api.Populator;
 import io.github.benas.jpopulator.impl.PopulatorBuilder;
 

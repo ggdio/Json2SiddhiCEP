@@ -1,4 +1,4 @@
-package br.produban.models;
+package br.produban.domain.rule;
 
 import java.util.Date;
 import java.util.List;
@@ -9,7 +9,7 @@ import javax.validation.constraints.Size;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import br.produban.enumerations.ItemType;
+import br.produban.domain.query.ItemType;
 
 /**
  * Created by bera on 23/06/16.

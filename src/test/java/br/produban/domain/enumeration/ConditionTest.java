@@ -1,32 +1,34 @@
-package br.produban.enumerations;
+package br.produban.domain.enumeration;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import br.produban.domain.query.Operator;
 
 public class ConditionTest {
 
 	@Test(expected = IllegalArgumentException.class)
 	public void testFromExternalNull() {
-		Condition.fromExternal(null);
+		Operator.fromExternal(null);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
 	public void testFromExternalInvalid() {
-		Condition.fromExternal("invalid");
+		Operator.fromExternal("invalid");
 	}
 
 	@Test
 	public void testFromExternalString() {
-		Condition result = Condition.fromExternal("AND");
+		Operator result = Operator.fromExternal("AND");
 		Assert.assertNotNull(result);
-		Assert.assertEquals(Condition.AND, result);
+		Assert.assertEquals(Operator.AND, result);
 	}
 
 	@Test
 	public void testFromExternalBetween() {
-		Condition result = Condition.fromExternal("OR");
+		Operator result = Operator.fromExternal("OR");
 		Assert.assertNotNull(result);
-		Assert.assertEquals(Condition.OR, result);
+		Assert.assertEquals(Operator.OR, result);
 	}
 
 }

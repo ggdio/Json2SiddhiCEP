@@ -1,22 +1,22 @@
-package br.produban.enumerations;
+package br.produban.domain.query;
 
 import org.apache.commons.lang3.StringUtils;
 
-public enum Condition {
+public enum ItemType {
 
-	AND("AND"), OR("OR");
+	CONDITION("condition"), GROUP("group");
 
 	public final String external;
 
-	private Condition(String external) {
+	private ItemType(String external) {
 		this.external = external;
 	}
 
-	public static Condition fromExternal(String external) {
+	public static ItemType fromExternal(String external) {
 		if (StringUtils.isEmpty(external)) {
 			throw new IllegalArgumentException();
 		}
-		for (Condition itemType : Condition.values()) {
+		for (ItemType itemType : ItemType.values()) {
 			if (itemType.external.equals(external)) {
 				return itemType;
 			}

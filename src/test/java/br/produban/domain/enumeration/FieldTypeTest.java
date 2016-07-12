@@ -1,7 +1,9 @@
-package br.produban.enumerations;
+package br.produban.domain.enumeration;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import br.produban.domain.query.FieldType;
 
 public class FieldTypeTest {
 

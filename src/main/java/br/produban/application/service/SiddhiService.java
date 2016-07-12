@@ -1,4 +1,4 @@
-package br.produban.services;
+package br.produban.application.service;
 
 import java.io.IOException;
 import java.io.StringWriter;
@@ -11,11 +11,11 @@ import org.apache.commons.lang3.text.WordUtils;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
-import br.produban.enumerations.FieldType;
-import br.produban.enumerations.ItemType;
-import br.produban.enumerations.Operator;
-import br.produban.models.CepRule;
-import br.produban.models.CepRuleItem;
+import br.produban.domain.query.Conditional;
+import br.produban.domain.query.FieldType;
+import br.produban.domain.query.ItemType;
+import br.produban.domain.rule.CepRule;
+import br.produban.domain.rule.CepRuleItem;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
@@ -26,7 +26,7 @@ public class SiddhiService {
 	final static Logger logger = Logger.getLogger(SiddhiService.class);
 
 	public String generateSiddhi(final CepRule cepRule) {
-		StringBuilder sb = new StringBuilder();
+		// StringBuilder sb = new StringBuilder();
 
 		// generateRule(sb, cepRule);
 		// generateQuery(sb, cepRule);
@@ -152,7 +152,7 @@ public class SiddhiService {
 
 	protected void processCondition(StringBuilder sb, final CepRule cepRule, CepRuleItem group, CepRuleItem condition) {
 
-		if (Operator.fromExternal(condition.getOperator()) == Operator.BETWEEN) {
+		if (Conditional.fromExternal(condition.getOperator()) == Conditional.BETWEEN) {
 			sb.append("( ");
 			sb.append(condition.getField());
 			sb.append(" >= ");
@@ -200,7 +200,7 @@ public class SiddhiService {
 	protected String freemarker(CepRule cepRule) {
 
 		// Freemarker configuration object
-		Configuration cfg = new Configuration();
+		Configuration cfg = new Configuration(Configuration.getVersion());
 		try {
 			// Load template from source folder
 			Template template = cfg.getTemplate("src/main/resources/siddhi.ftl");

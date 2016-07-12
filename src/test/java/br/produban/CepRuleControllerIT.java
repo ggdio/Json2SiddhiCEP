@@ -41,8 +41,8 @@ import org.springframework.web.context.WebApplicationContext;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import br.produban.models.CepRule;
-import br.produban.repositories.CepRuleMongoRepository;
+import br.produban.domain.rule.CepRule;
+import br.produban.infrastructure.repository.CepRuleMongoRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Json2SiddhiCepApplication.class)

@@ -1,31 +1,33 @@
-package br.produban.enumerations;
+package br.produban.domain.enumeration;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import br.produban.domain.query.Conditional;
 
 public class OperatorTest {
 
 	@Test(expected = IllegalArgumentException.class)
 	public void testFromExternalNull() {
-		Operator.fromExternal(null);
+		Conditional.fromExternal(null);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
 	public void testFromExternalInvalid() {
-		Operator.fromExternal("invalid");
+		Conditional.fromExternal("invalid");
 	}
 
 	@Test
 	public void testFromExternalEqual() {
-		Operator result = Operator.fromExternal("==");
+		Conditional result = Conditional.fromExternal("==");
 		Assert.assertNotNull(result);
-		Assert.assertEquals(Operator.EQUAL, result);
+		Assert.assertEquals(Conditional.EQUAL, result);
 	}
 
 	@Test
 	public void testFromExternalDouble() {
-		Operator result = Operator.fromExternal("<=");
+		Conditional result = Conditional.fromExternal("<=");
 		Assert.assertNotNull(result);
-		Assert.assertEquals(Operator.LESS_THAN_EQUAL, result);
+		Assert.assertEquals(Conditional.LOWER_OR_EQUAL, result);
 	}
 }
