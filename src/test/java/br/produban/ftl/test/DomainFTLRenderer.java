@@ -51,10 +51,17 @@ public class DomainFTLRenderer {
 	
 	public static void main(String[] args) {
 		Criteria criteria = new Criteria()
-			.addCriteria(new Condition("xpto", Conditional.EQUAL, "X"), new Condition(Operator.OR, "xpto", Conditional.EQUAL, "Y"))
+			.addCriteria(
+					new Criteria()
+						.addCriteria(
+								new Criteria().addCondition("xyz", Conditional.NOT_EQUAL, "A")
+							)
+						.addCondition(Operator.AND, "xpto", Conditional.EQUAL, "X")
+						.addCondition(Operator.OR, "xpto", Conditional.EQUAL, "Y")
+				)
 			.addCondition("name", Conditional.EQUAL, "Dio")
-			.addCondition(Operator.AND ,"age", Conditional.GRATER_OR_EQUAL, 25)
-			.addCondition(Operator.AND ,"age", Conditional.LOWER_OR_EQUAL, 30);
+			.addCondition(Operator.AND, "age", Conditional.GRATER_OR_EQUAL, 25)
+			.addCondition(Operator.AND, "age", Conditional.LOWER_OR_EQUAL, 30);
 		
 		DomainFTLRenderer renderer = new DomainFTLRenderer();
 		

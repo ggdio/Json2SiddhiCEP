@@ -43,6 +43,10 @@ jar {
 	}
 }
 
+configurations {
+    compile.exclude module: "spring-boot-starter-tomcat"
+}
+
 dependencies {
 	compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
@@ -50,6 +54,7 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-data-mongodb")
     compile("org.freemarker:freemarker")
 
+	runtime('org.springframework.boot:spring-boot-starter-undertow')
 	runtime('com.h2database:h2')
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')

@@ -9,7 +9,6 @@ import org.springframework.boot.context.web.SpringBootServletInitializer;
 public class Json2SiddhiCepApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
-
 		SpringApplication.run(Json2SiddhiCepApplication.class, args);
 	}
 
